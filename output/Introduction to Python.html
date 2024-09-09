@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Python</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+</head>
+<body>
+    
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+  
+    <div class="container">
+        <main>
+            <h1>Introduction to Python</h1>
+            <pre><code class="language-markdown"><span class="hljs-section"># Introduction</span>
+
+In this session, we&#x27;ll go over some basic Python operations and check various data types in Python.
+
+<span class="hljs-section">### Basic Arithmetic Operations in Python</span>
+
+Python supports several arithmetic operators, which you can use to perform common mathematical operations. Let&#x27;s explore them:
+
+<span class="hljs-code">```python
+print(2 + 3)   # addition(+)
+print(3 - 1)   # subtraction(-)
+print(2 * 3)   # multiplication(*)
+print(3 / 2)   # division(/)
+print(3 ** 2)  # exponential(**)
+print(3 % 2)   # modulus(%)
+print(3 // 2)  # floor division operator(//)
+```</span>
+</code></pre>
+<ul>
+<li><strong>Addition (+)</strong>: Adds two numbers.<ul>
+<li>Example: <code>2 + 3</code> results in <code>5</code>.</li>
+</ul>
+</li>
+<li><strong>Subtraction (-)</strong>: Subtracts one number from another.<ul>
+<li>Example: <code>3 - 1</code> results in <code>2</code>.</li>
+</ul>
+</li>
+<li><strong>Multiplication (*)</strong>: Multiplies two numbers.<ul>
+<li>Example: <code>2 * 3</code> results in <code>6</code>.</li>
+</ul>
+</li>
+<li><strong>Division (/)</strong>: Divides one number by another.<ul>
+<li>Example: <code>3 / 2</code> results in <code>1.5</code>.</li>
+</ul>
+</li>
+<li><strong>Exponential (</strong>)**: Raises one number to the power of another.<ul>
+<li>Example: <code>3 ** 2</code> results in <code>9</code> (3 raised to the power of 2).</li>
+</ul>
+</li>
+<li><strong>Modulus (%)</strong>: Returns the remainder of the division.<ul>
+<li>Example: <code>3 % 2</code> results in <code>1</code> (remainder when dividing 3 by 2).</li>
+</ul>
+</li>
+<li><strong>Floor Division (//)</strong>: Returns the integer part of the division (no remainder).<ul>
+<li>Example: <code>3 // 2</code> results in <code>1</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="checking-data-types-in-python">Checking Data Types in Python</h3>
+<p>Python has several built-in data types. You can check the data type of any value or variable using the <code>type()</code> function. Below are some common data types in Python:</p>
+<pre><code class="language-python"><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(<span class="hljs-number">10</span>))                  <span class="hljs-comment"># Int</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(<span class="hljs-number">3.14</span>))                <span class="hljs-comment"># Float</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(<span class="hljs-number">1</span> + <span class="hljs-number">3j</span>))              <span class="hljs-comment"># Complex</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(<span class="hljs-string">&#x27;Aytekin&#x27;</span>))          <span class="hljs-comment"># String</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]))           <span class="hljs-comment"># List</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>({<span class="hljs-string">&#x27;name&#x27;</span>:<span class="hljs-string">&#x27;Aytekin&#x27;</span>})) <span class="hljs-comment"># Dictionary</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>({<span class="hljs-number">9.8</span>, <span class="hljs-number">3.14</span>, <span class="hljs-number">2.7</span>}))    <span class="hljs-comment"># Set</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>((<span class="hljs-number">9.8</span>, <span class="hljs-number">3.14</span>, <span class="hljs-number">2.7</span>)))    <span class="hljs-comment"># Tuple</span>
+</code></pre>
+<h4 id="data-types-explained">Data Types Explained:</h4>
+<ul>
+<li><strong>Integer (int)</strong>: Whole numbers, positive or negative (e.g., <code>10</code>, <code>-5</code>).</li>
+<li><strong>Float (float)</strong>: Decimal numbers (e.g., <code>3.14</code>, <code>-2.7</code>).</li>
+<li><strong>Complex (complex)</strong>: Numbers with a real and imaginary part (e.g., <code>1 + 3j</code>).</li>
+<li><strong>String (str)</strong>: A sequence of characters enclosed in single or double quotes (e.g., <code>&#39;Aytekin&#39;</code>).</li>
+<li><strong>List (list)</strong>: An ordered, mutable collection of items (e.g., <code>[1, 2, 3]</code>).</li>
+<li><strong>Dictionary (dict)</strong>: An unordered collection of key-value pairs (e.g., <code>{&#39;name&#39;: &#39;Aytekin&#39;}</code>).</li>
+<li><strong>Set (set)</strong>: An unordered collection of unique items (e.g., <code>{9.8, 3.14, 2.7}</code>).</li>
+<li><strong>Tuple (tuple)</strong>: An ordered, immutable collection of items (e.g., <code>(9.8, 3.14, 2.7)</code>).</li>
+</ul>
+<p>Python is a dynamically typed language, meaning you don&#39;t have to declare the data type explicitly. The interpreter infers the type based on the value assigned.</p>
+<hr>
+<p>This concludes the basic introduction. Continue exploring more features in Python as you progress in the challenge!</p>
+<pre><code>
+This <span class="hljs-built_in">file</span> includes explanations <span class="hljs-keyword">for</span> arithmetic operations <span class="hljs-keyword">and</span> data types, suitable <span class="hljs-keyword">for</span> Python beginners. You can <span class="hljs-built_in">add</span> <span class="hljs-keyword">it</span> <span class="hljs-built_in">to</span> your `python introduction.md` <span class="hljs-built_in">file</span>.
+</code></pre>
+
+        </main>
+    </div>
+    
+<footer>
+    <p>&copy; 2024 My Blog. All rights reserved.</p>
+</footer>
+  
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+    </script>
+</body>
+</html>
+    

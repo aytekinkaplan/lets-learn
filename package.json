@@ -1,0 +1,20 @@
+{
+  "name": "markdown-blog-generator",
+  "version": "1.0.0",
+  "description": "A simple markdown to HTML blog generator",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "generate": "node index.js",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "highlight.js": "^11.10.0",
+    "marked": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}

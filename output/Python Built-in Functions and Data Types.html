@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Built-in Functions and Data Types</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+</head>
+<body>
+    
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+  
+    <div class="container">
+        <main>
+            <h1>Python Built-in Functions and Data Types</h1>
+            <h2 id="built-in-functions">Built-in Functions</h2>
+<p>Python provides numerous built-in functions, which are globally accessible, meaning you can use them without importing or configuring anything. Some commonly used Python built-in functions include: <em>print()</em>, <em>len()</em>, <em>type()</em>, <em>int()</em>, <em>float()</em>, <em>str()</em>, <em>input()</em>, <em>list()</em>, <em>dict()</em>, <em>min()</em>, <em>max()</em>, <em>sum()</em>, <em>sorted()</em>, <em>open()</em>, <em>help()</em>, and <em>dir()</em>. Below is a list of built-in Python functions taken from <a href="https://docs.python.org/3.9/library/functions.html">Python documentation</a>.</p>
+<p><img src="./images/builtin-functions.png" alt="Built-in Functions"></p>
+<p>Let’s start experimenting with a few of these in a Python shell.</p>
+<p><img src="./images/builtin-functions_practice.png" alt="Built-in functions"></p>
+<p>Now, let’s practice some more by utilizing different built-in functions.</p>
+<p><img src="./images/help_and_dir_builtin.png" alt="Help and Dir Built in Functions"></p>
+<p>As seen from the terminal output, Python has reserved words that should not be used to declare variables or functions. We’ll cover variables in more detail later.</p>
+<p>At this point, you should be comfortable with built-in functions. Let’s take one more look at some built-in functions before moving on.</p>
+<p><img src="./images/builtin-functional-final.png" alt="Min Max Sum"></p>
+<h2 id="variables">Variables</h2>
+<p>In programming, variables are used to store data in memory. It&#39;s recommended to use mnemonic variable names—names that are easy to remember and are descriptive. A variable represents a memory address that holds data.</p>
+<p>Variable names cannot start with a number or contain special characters like hyphens or dollar signs. A variable name can be brief (e.g., x, y, z) or more descriptive (e.g., firstname, lastname, age, country).</p>
+<h3 id="python-variable-naming-rules">Python Variable Naming Rules</h3>
+<ul>
+<li>Variable names must begin with a letter or underscore (_).</li>
+<li>They cannot start with a number.</li>
+<li>They can only contain alphanumeric characters and underscores (A-z, 0-9, and _).</li>
+<li>Variable names are case-sensitive (e.g., firstname, Firstname, FirstName, and FIRSTNAME are all different).</li>
+</ul>
+<p>Here are examples of valid variable names:</p>
+<pre><code class="language-shell">firstname
+lastname
+age
+country
+city
+first_name
+last_name
+capital_city
+_if  # using underscore to avoid reserved word conflict
+year_2021
+year2021
+current_year_2021
+birth_year
+num1
+num2
+</code></pre>
+<p>Examples of invalid variable names:</p>
+<pre><code class="language-shell">first-name
+first@name
+<span class="hljs-meta prompt_">first$</span><span class="language-bash">name</span>
+num-1
+1num
+</code></pre>
+<p>In Python, developers often use <strong>snake_case</strong> for naming variables, where underscores are used between words (e.g., <code>first_name</code>, <code>engine_rotation_speed</code>). Below is an example of proper variable naming, particularly when more than one word is needed.</p>
+<p>Declaring variables in Python involves assigning a specific value to them. The assignment operator <code>=</code> is used to store data in the variable. Unlike mathematics, <code>=</code> in Python is not used for equality but assignment.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py"><span class="hljs-comment"># Variables in Python</span>
+first_name = <span class="hljs-string">&#x27;Aytekin&#x27;</span>
+last_name = <span class="hljs-string">&#x27;Kaplan&#x27;</span>
+country = <span class="hljs-string">&#x27;Turkey&#x27;</span>
+city = <span class="hljs-string">&#x27;Istanbul&#x27;</span>
+age = <span class="hljs-number">30</span>
+is_married = <span class="hljs-literal">True</span>
+skills = [<span class="hljs-string">&#x27;Python&#x27;</span>, <span class="hljs-string">&#x27;JavaScript&#x27;</span>, <span class="hljs-string">&#x27;React&#x27;</span>]
+person_info = {
+   <span class="hljs-string">&#x27;firstname&#x27;</span>: <span class="hljs-string">&#x27;Aytekin&#x27;</span>,
+   <span class="hljs-string">&#x27;lastname&#x27;</span>: <span class="hljs-string">&#x27;Kaplan&#x27;</span>,
+   <span class="hljs-string">&#x27;country&#x27;</span>: <span class="hljs-string">&#x27;Turkey&#x27;</span>,
+   <span class="hljs-string">&#x27;city&#x27;</span>: <span class="hljs-string">&#x27;Istanbul&#x27;</span>
+}
+</code></pre>
+<p>Let’s use the <em>print()</em> and <em>len()</em> functions. The <code>print</code> function accepts a variable number of arguments. Each value passed is considered an argument. Below is an example of how this works.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py"><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello, World!&#x27;</span>)  <span class="hljs-comment"># The string &#x27;Hello, World!&#x27; is an argument</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello&#x27;</span>, <span class="hljs-string">&#x27;,&#x27;</span>, <span class="hljs-string">&#x27;World&#x27;</span>, <span class="hljs-string">&#x27;!&#x27;</span>)  <span class="hljs-comment"># Multiple arguments: 4 in total</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(<span class="hljs-string">&#x27;Hello, World!&#x27;</span>))  <span class="hljs-comment"># It takes a single argument</span>
+</code></pre>
+<p>Let’s now print the variables declared earlier and check their lengths:</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py"><span class="hljs-comment"># Printing the values stored in variables</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;First name:&#x27;</span>, first_name)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;First name length:&#x27;</span>, <span class="hljs-built_in">len</span>(first_name))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Last name: &#x27;</span>, last_name)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Last name length: &#x27;</span>, <span class="hljs-built_in">len</span>(last_name))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Country: &#x27;</span>, country)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;City: &#x27;</span>, city)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Age: &#x27;</span>, age)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Married: &#x27;</span>, is_married)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Skills: &#x27;</span>, skills)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Person information: &#x27;</span>, person_info)
+</code></pre>
+<h3 id="declaring-multiple-variables-on-one-line">Declaring Multiple Variables on One Line</h3>
+<p>You can declare several variables at once, all in a single line:</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">first_name, last_name, country, age, is_married = <span class="hljs-string">&#x27;Aytekin&#x27;</span>, <span class="hljs-string">&#x27;Kaplan&#x27;</span>, <span class="hljs-string">&#x27;Turkey&#x27;</span>, <span class="hljs-number">30</span>, <span class="hljs-literal">True</span>
+
+<span class="hljs-built_in">print</span>(first_name, last_name, country, age, is_married)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;First name:&#x27;</span>, first_name)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Last name: &#x27;</span>, last_name)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Country: &#x27;</span>, country)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Age: &#x27;</span>, age)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Married: &#x27;</span>, is_married)
+</code></pre>
+<p>To capture user input, we can use the <em>input()</em> function. Let&#39;s assign user input to <code>first_name</code> and <code>age</code>:</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">first_name = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;What is your name: &#x27;</span>)
+age = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;How old are you? &#x27;</span>)
+
+<span class="hljs-built_in">print</span>(first_name)
+<span class="hljs-built_in">print</span>(age)
+</code></pre>
+<h2 id="data-types">Data Types</h2>
+<p>In Python, several data types exist. To determine the data type of a value, we use the <em>type()</em> function. Mastering data types is essential for programming because everything in programming revolves around data types. While I’ve introduced them earlier, we’ll now explore them in more detail.</p>
+<h2 id="checking-data-types-and-casting">Checking Data Types and Casting</h2>
+<ul>
+<li><p><strong>Check Data Types:</strong> To check the type of any variable or value, we use the <em>type()</em> function.</p>
+<p><strong>Example:</strong></p>
+</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-comment"># Different Python data types</span>
+<span class="hljs-comment"># Let&#x27;s declare variables with various data types</span>
+
+first_name = <span class="hljs-string">&#x27;Aytekin&#x27;</span>      <span class="hljs-comment"># str</span>
+last_name = <span class="hljs-string">&#x27;Kaplan&#x27;</span>        <span class="hljs-comment"># str</span>
+country = <span class="hljs-string">&#x27;Turkey&#x27;</span>          <span class="hljs-comment"># str</span>
+city = <span class="hljs-string">&#x27;Istanbul&#x27;</span>           <span class="hljs-comment"># str</span>
+age = <span class="hljs-number">30</span>                    <span class="hljs-comment"># int</span>
+
+<span class="hljs-comment"># Checking data types</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(<span class="hljs-string">&#x27;Aytekin&#x27;</span>))      <span class="hljs-comment"># str</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(first_name))     <span class="hljs-comment"># str</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(<span class="hljs-number">10</span>))             <span class="hljs-comment"># int</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(<span class="hljs-number">3.14</span>))           <span class="hljs-comment"># float</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(<span class="hljs-number">1</span> + <span class="hljs-number">1j</span>))         <span class="hljs-comment"># complex</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(<span class="hljs-literal">True</span>))           <span class="hljs-comment"># bool</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]))      <span class="hljs-comment"># list</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>({<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Aytekin&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">30</span>}))  <span class="hljs-comment"># dict</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>((<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)))                              <span class="hljs-comment"># tuple</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>({<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>}))                           <span class="hljs-comment"># set</span>
+</code></pre>
+<ul>
+<li><p><strong>Casting:</strong> Casting involves converting one data type into another. Python provides functions like <em>int()</em>, <em>float()</em>, <em>str()</em>, <em>list()</em>, and <em>set()</em> for casting. For instance, when performing arithmetic with numbers as strings, those strings must first be converted into integers or floats.</p>
+<p><strong>Example:</strong></p>
+</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-comment"># int to float</span>
+num_int = <span class="hljs-number">10</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;num_int:&#x27;</span>, num_int)      <span class="hljs-comment"># 10</span>
+num_float = <span class="hljs-built_in">float</span>(num_int)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;num_float:&#x27;</span>, num_float)  <span class="hljs-comment"># 10.0</span>
+
+<span class="hljs-comment"># float to int</span>
+gravity = <span class="hljs-number">9.81</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(gravity))            <span class="hljs-comment"># 9</span>
+
+<span class="hljs-comment"># int to str</span>
+num_int = <span class="hljs-number">10</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>(num_int))            <span class="hljs-comment"># &#x27;10&#x27;</span>
+
+<span class="hljs-comment"># str to int or float</span>
+num_str = <span class="hljs-string">&#x27;10.6&#x27;</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(<span class="hljs-built_in">float</span>(num_str)))     <span class="hljs-comment"># 10</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">float</span>(num_str))          <span class="hljs-comment"># 10.6</span>
+
+<span class="hljs-comment"># str to list</span>
+first_name = <span class="hljs-string">&#x27;Aytekin&#x27;</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(first_name))        <span class="hljs-comment"># [&#x27;A&#x27;, &#x27;y&#x27;, &#x27;t&#x27;, &#x27;e&#x27;, &#x27;k&#x27;, &#x27;i&#x27;, &#x27;n&#x27;]</span>
+</code></pre>
+<hr>
+
+        </main>
+    </div>
+    
+<footer>
+    <p>&copy; 2024 My Blog. All rights reserved.</p>
+</footer>
+  
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+    </script>
+</body>
+</html>
+    
