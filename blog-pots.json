@@ -1,0 +1,12 @@
+[
+  {
+    "title": "İlk Blog Yazısı",
+    "file": "ilk-yazi.md",
+    "excerpt": "Bu ilk blog yazısının kısa bir özeti..."
+  },
+  {
+    "title": "İkinci Blog Yazısı",
+    "file": "ikinci-yazi.md",
+    "excerpt": "İkinci yazının kısa bir özeti..."
+  }
+]
