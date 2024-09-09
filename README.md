@@ -1,5 +1,4 @@
-<<<<<<< HEAD
----
+## <<<<<<< HEAD
 
 # lets-learn
 
@@ -69,7 +68,5 @@ This project is a work in progress and is not yet complete. Future updates will 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+
 =======
-# lets-learn
-Lets practice
->>>>>>> 5c7c15c803ba83cf7af607e94cfd83e9dad2e46f
