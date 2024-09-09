@@ -1,2 +1,2 @@
-# lets-learn-python
+# lets-learn
 Lets practice
