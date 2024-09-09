@@ -1,5 +1,3 @@
-## <<<<<<< HEAD
-
 # lets-learn
 
 **lets-learn** is a simple markdown to HTML blog generator. This project converts markdown files into beautifully styled HTML pages, handles image copying, and generates static pages for a complete blogging experience. The project uses Node.js along with various packages to achieve its functionality.
