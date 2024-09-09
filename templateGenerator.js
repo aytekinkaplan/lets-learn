@@ -2,8 +2,10 @@ const fs = require("fs").promises;
 const path = require("path");
 
 function fixImagePaths(content) {
+  // Markdown'daki resim yollarını HTML çıktısı için düzelt
   return content.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
     if (!src.startsWith("http")) {
+      // Eğer kaynak bir URL değilse, images/ dizinine yönlendir
       src = `images/${path.basename(src)}`;
     }
     return `<img src="${src}" alt="${alt}">`;
@@ -189,21 +191,10 @@ code {
     text-decoration: none;
 }
 img {
-    max-width: 600px;
-    max-height: 400px;
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    object-position: center;
+    max-width: 100%;
+    height: auto;
     display: block;
-    margin: 1em auto;
-    border-radius: 8px;
-}
-@media (max-width: 768px) {
-    img {
-        max-width: 100%;
-        height: auto;
-    }
+    margin: 1em 0;
 }
     `;
   await fs.writeFile(path.join(outputDir, "styles.css"), css);
