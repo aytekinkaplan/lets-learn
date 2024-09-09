@@ -1,17 +1,231 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog Anasayfa</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Additional styles for markdown content */
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .card {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      pre {
+        background: #e0e0e0;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <h1>Blog Yazıları</h1>
+      <h1>Blog Posts</h1>
       <div id="blog-cards"></div>
+      <div id="blog-content">
+        <a href="#" class="back-link" onclick="showBlogList(); return false;"
+          >← Back to List</a
+        >
+        <div id="post-content"></div>
+      </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+      // Blog posts are defined here
+      const blogPosts = [
+        {
+          title: "Python Blog Project",
+          content: `# Python Blog
+
+A dynamic blog application built with Flask, featuring user authentication, blog post creation, editing, and deletion.
+
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+- User authentication (login/logout)
+- Create, read, update, and delete blog posts
+- Responsive design for various screen sizes
+- Syntax highlighting for code snippets
+- Pagination for blog posts
+- Category-based post organization
+
+## Technologies Used
+| Technology    | Description                    |
+| ------------- | ------------------------------ |
+| Python 3.9+   | Core programming language      |
+| Flask         | Web framework                  |
+| SQLAlchemy    | ORM for database operations    |
+| Flask-Login   | User session management        |
+| Flask-Migrate | Database migration             |
+| HTML/CSS      | Frontend structure and styling |
+| JavaScript    | Client-side interactivity      |
+
+### Python Libraries
+- **Flask**: A micro web framework for Python.
+- **Flask-SQLAlchemy**: Adds SQLAlchemy support to Flask.
+- **Flask-Migrate**: Handles SQLAlchemy database migrations for Flask.
+- **Flask-Login**: Provides user session management for Flask.
+- **Werkzeug**: A comprehensive WSGI web application library.
+- **Jinja2**: A modern and designer-friendly templating language for Python.
+
+## Installation
+\`\`\`bash
+# Clone the repository
+git clone https://github.com/aytekinkaplan/my-python-blog.git
+cd my-python-blog
+
+# Create a virtual environment
+python -m venv venv
+source venv/bin/activate # On Windows use \`venv\\Scripts\\activate\`
+
+# Install the required packages
+pip install -r requirements.txt
+
+# Set up the database
+flask db upgrade
+
+# Run the application
+flask run
+\`\`\`
+
+## Usage
+After starting the server, navigate to \`http://localhost:5000\` in your web browser.
+- Create an account or log in
+- Create new blog posts
+- Edit or delete your existing posts
+- Browse posts by category
+
+## Project Structure
+\`\`\`plaintext
+my-python-blog/
+│
+├── app/
+│ ├── static/
+│ │ ├── css/
+│ │ └── js/
+│ ├── templates/
+│ ├── __init__.py
+│ ├── models.py
+│ └── routes.py
+│
+├── migrations/
+├── imagesofproject/
+├── .gitignore
+├── config.py
+├── requirements.txt
+└── run.py
+\`\`\`
+
+## Screenshots
+### Login Page
+![Login Page](imagesofproject/login.png)
+
+### Blog Post
+![Blog Post](imagesofproject/post.png)
+
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+`,
+        },
+        {
+          title: "First Blog Post",
+          content: `# First Blog Post
+
+This is the content of the first blog post. It's written in Markdown format.
+
+## Subheading
+
+- Item 1
+- Item 2
+
+\`\`\`javascript
+console.log("Hello, World!");
+\`\`\`
+`,
+        },
+        {
+          title: "Second Blog Post",
+          content: `# Second Blog Post
+
+This is the content of the second blog post. Again in Markdown format.
+
+## Another Subheading
+
+1. Numbered item 1
+2. Numbered item 2
+
+\`\`\`python
+print("Hello, World!")
+\`\`\`
+`,
+        },
+      ];
+
+      function showBlogList() {
+        document.getElementById("blog-cards").style.display = "block";
+        document.getElementById("blog-content").style.display = "none";
+      }
+
+      function showBlogPost(index) {
+        const post = blogPosts[index];
+        document.getElementById("post-content").innerHTML = marked.parse(
+          post.content
+        );
+        document.getElementById("blog-cards").style.display = "none";
+        document.getElementById("blog-content").style.display = "block";
+      }
+
+      function createBlogCards() {
+        const blogCards = document.getElementById("blog-cards");
+        blogPosts.forEach((post, index) => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.innerHTML = `
+                    <h2>${post.title}</h2>
+                    <p>${post.content.split("\n")[2]}...</p>
+                    <a href="#" onclick="showBlogPost(${index}); return false;">Read More</a>
+                `;
+          blogCards.appendChild(card);
+        });
+      }
+
+      // Create blog cards when the page loads
+      createBlogCards();
+      showBlogList();
+    </script>
   </body>
 </html>
