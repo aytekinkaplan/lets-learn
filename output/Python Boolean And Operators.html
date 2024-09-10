@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Boolean And Operators</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+</head>
+<body>
+    
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+  
+    <div class="container">
+        <main>
+            <h1>Python Boolean And Operators</h1>
+            <h2 id="boolean">Boolean</h2>
+<p>The boolean data type in Python represents one of two values: <em>True</em> or <em>False</em>. These values become particularly useful when working with comparison operators. It&#39;s crucial to note that in Python, the first letter of True and False must be capitalized, unlike in some other programming languages such as JavaScript.</p>
+<p><strong>Example: Boolean Values</strong></p>
+<pre><code class="language-py"><span class="hljs-built_in">print</span>(<span class="hljs-literal">True</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-literal">False</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-number">1</span>))    <span class="hljs-comment"># True</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-number">0</span>))    <span class="hljs-comment"># False</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-string">&quot;&quot;</span>))   <span class="hljs-comment"># False</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>([]))   <span class="hljs-comment"># False</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>({}))   <span class="hljs-comment"># False</span>
+</code></pre>
+<h2 id="operators">Operators</h2>
+<p>Python supports various types of operators. Let&#39;s explore some of the most commonly used ones.</p>
+<h3 id="assignment-operators">Assignment Operators</h3>
+<p>Assignment operators are used to assign values to variables. The equal sign (=) in Python doesn&#39;t indicate equality as in mathematics; instead, it assigns a value to a variable. Here&#39;s a table showing different Python assignment operators, adapted from <a href="https://www.w3schools.com/python/python_operators.asp">w3school</a>.</p>
+<p><img src="./images/assignment_operators.png" alt="Assignment Operators"></p>
+<p><strong>Example: Assignment Operators</strong></p>
+<pre><code class="language-py">x = <span class="hljs-number">5</span>
+x += <span class="hljs-number">3</span>   <span class="hljs-comment"># x = x + 3</span>
+<span class="hljs-built_in">print</span>(x)  <span class="hljs-comment"># 8</span>
+x -= <span class="hljs-number">2</span>   <span class="hljs-comment"># x = x - 2</span>
+<span class="hljs-built_in">print</span>(x)  <span class="hljs-comment"># 6</span>
+x *= <span class="hljs-number">4</span>   <span class="hljs-comment"># x = x * 4</span>
+<span class="hljs-built_in">print</span>(x)  <span class="hljs-comment"># 24</span>
+x /= <span class="hljs-number">3</span>   <span class="hljs-comment"># x = x / 3</span>
+<span class="hljs-built_in">print</span>(x)  <span class="hljs-comment"># 8.0</span>
+x %= <span class="hljs-number">5</span>   <span class="hljs-comment"># x = x % 5</span>
+<span class="hljs-built_in">print</span>(x)  <span class="hljs-comment"># 3.0</span>
+x **= <span class="hljs-number">2</span>  <span class="hljs-comment"># x = x ** 2</span>
+<span class="hljs-built_in">print</span>(x)  <span class="hljs-comment"># 9.0</span>
+</code></pre>
+<h3 id="arithmetic-operators">Arithmetic Operators</h3>
+<p>Python provides several arithmetic operators for mathematical operations:</p>
+<ul>
+<li>Addition (+): a + b</li>
+<li>Subtraction (-): a - b</li>
+<li>Multiplication (_): a _ b</li>
+<li>Division (/): a / b</li>
+<li>Modulus (%): a % b</li>
+<li>Floor division (//): a // b</li>
+<li>Exponentiation (**): a ** b</li>
+</ul>
+<p><img src="./images/arithmetic_operators.png" alt="Arithmetic Operators"></p>
+<p><strong>Example: Integers</strong></p>
+<pre><code class="language-py"><span class="hljs-comment"># Arithmetic Operations with Integers</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Addition: &#x27;</span>, <span class="hljs-number">1</span> + <span class="hljs-number">2</span>)        <span class="hljs-comment"># 3</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Subtraction: &#x27;</span>, <span class="hljs-number">2</span> - <span class="hljs-number">1</span>)     <span class="hljs-comment"># 1</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Multiplication: &#x27;</span>, <span class="hljs-number">2</span> * <span class="hljs-number">3</span>)  <span class="hljs-comment"># 6</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Division: &#x27;</span>, <span class="hljs-number">4</span> / <span class="hljs-number">2</span>)        <span class="hljs-comment"># 2.0  Division in Python gives floating number</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Division: &#x27;</span>, <span class="hljs-number">6</span> / <span class="hljs-number">2</span>)        <span class="hljs-comment"># 3.0</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Division: &#x27;</span>, <span class="hljs-number">7</span> / <span class="hljs-number">2</span>)        <span class="hljs-comment"># 3.5</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Floor Division: &#x27;</span>, <span class="hljs-number">7</span> // <span class="hljs-number">2</span>)   <span class="hljs-comment"># 3,  gives without the floating number or without the remaining</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Floor Division: &#x27;</span>, <span class="hljs-number">7</span> // <span class="hljs-number">3</span>)   <span class="hljs-comment"># 2</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Modulus: &#x27;</span>, <span class="hljs-number">3</span> % <span class="hljs-number">2</span>)         <span class="hljs-comment"># 1, Gives the remainder</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Exponentiation: &#x27;</span>, <span class="hljs-number">2</span> ** <span class="hljs-number">3</span>) <span class="hljs-comment"># 8 it means 2 * 2 * 2</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Order of Operations: &#x27;</span>, <span class="hljs-number">2</span> + <span class="hljs-number">3</span> * <span class="hljs-number">4</span>)  <span class="hljs-comment"># 14</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Parentheses: &#x27;</span>, (<span class="hljs-number">2</span> + <span class="hljs-number">3</span>) * <span class="hljs-number">4</span>)  <span class="hljs-comment"># 20</span>
+</code></pre>
+<p><strong>Example: Floats</strong></p>
+<pre><code class="language-py"><span class="hljs-comment"># Operations with Floating Point Numbers</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;PI:&#x27;</span>, <span class="hljs-number">3.14159</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Gravity:&#x27;</span>, <span class="hljs-number">9.81</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Complex Calculation:&#x27;</span>, (<span class="hljs-number">3.14159</span> * <span class="hljs-number">5</span>**<span class="hljs-number">2</span>) / <span class="hljs-number">2</span>)  <span class="hljs-comment"># Area of a circle with radius 5</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Temperature Conversion:&#x27;</span>, (<span class="hljs-number">98.6</span> - <span class="hljs-number">32</span>) * <span class="hljs-number">5</span>/<span class="hljs-number">9</span>)  <span class="hljs-comment"># Fahrenheit to Celsius</span>
+</code></pre>
+<p><strong>Example: Complex Numbers</strong></p>
+<pre><code class="language-py"><span class="hljs-comment"># Complex Number Operations</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Complex number: &#x27;</span>, <span class="hljs-number">1</span> + <span class="hljs-number">1j</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Multiplying complex numbers: &#x27;</span>, (<span class="hljs-number">1</span> + <span class="hljs-number">1j</span>) * (<span class="hljs-number">1</span> - <span class="hljs-number">1j</span>))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Complex exponentiation: &#x27;</span>, (<span class="hljs-number">1</span> + <span class="hljs-number">1j</span>) ** <span class="hljs-number">2</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Complex conjugate: &#x27;</span>, (<span class="hljs-number">1</span> + <span class="hljs-number">1j</span>).conjugate())
+</code></pre>
+<p>Let&#39;s declare variables and perform arithmetic operations. Remember to use descriptive variable names in your actual code.</p>
+<p><strong>Example: Variable Arithmetic</strong></p>
+<pre><code class="language-python"><span class="hljs-comment"># Declaring variables</span>
+length = <span class="hljs-number">10</span>
+width = <span class="hljs-number">5</span>
+height = <span class="hljs-number">3</span>
+
+<span class="hljs-comment"># Arithmetic operations</span>
+area = length * width
+volume = length * width * height
+perimeter = <span class="hljs-number">2</span> * (length + width)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Rectangle Area:&#x27;</span>, area)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Box Volume:&#x27;</span>, volume)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Rectangle Perimeter:&#x27;</span>, perimeter)
+
+<span class="hljs-comment"># More complex calculations</span>
+diagonal = (length**<span class="hljs-number">2</span> + width**<span class="hljs-number">2</span>) ** <span class="hljs-number">0.5</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Rectangle Diagonal:&#x27;</span>, diagonal)
+
+density = <span class="hljs-number">0.8</span>  <span class="hljs-comment"># g/cm^3</span>
+mass = volume * density
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Box Mass (g):&#x27;</span>, mass)
+</code></pre>
+<p><strong>Example: Scientific Calculations</strong></p>
+<pre><code class="language-py"><span class="hljs-keyword">import</span> math
+
+<span class="hljs-comment"># Constants</span>
+G = <span class="hljs-number">6.67430e-11</span>  <span class="hljs-comment"># Gravitational constant</span>
+c = <span class="hljs-number">299792458</span>  <span class="hljs-comment"># Speed of light in m/s</span>
+
+<span class="hljs-comment"># Calculations</span>
+mass_earth = <span class="hljs-number">5.97e24</span>  <span class="hljs-comment"># kg</span>
+radius_earth = <span class="hljs-number">6.37e6</span>  <span class="hljs-comment"># m</span>
+
+escape_velocity = math.sqrt(<span class="hljs-number">2</span> * G * mass_earth / radius_earth)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Escape velocity from Earth:&#x27;</span>, escape_velocity, <span class="hljs-string">&#x27;m/s&#x27;</span>)
+
+energy = <span class="hljs-number">1</span> * c**<span class="hljs-number">2</span>  <span class="hljs-comment"># E = mc^2 for 1 kg</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Energy equivalent of 1 kg:&#x27;</span>, energy, <span class="hljs-string">&#x27;J&#x27;</span>)
+
+<span class="hljs-comment"># Calculating orbital period</span>
+satellite_altitude = <span class="hljs-number">35786000</span>  <span class="hljs-comment"># m (geostationary orbit)</span>
+orbital_radius = radius_earth + satellite_altitude
+orbital_period = <span class="hljs-number">2</span> * math.pi * math.sqrt(orbital_radius**<span class="hljs-number">3</span> / (G * mass_earth))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Geostationary orbital period:&#x27;</span>, orbital_period / <span class="hljs-number">3600</span>, <span class="hljs-string">&#x27;hours&#x27;</span>)
+</code></pre>
+<h3 id="comparison-operators">Comparison Operators</h3>
+<p>Comparison operators are used to compare values. They return boolean results (True or False). Here&#39;s a table of Python comparison operators:</p>
+<p><img src="./images/comparison_operators.png" alt="Comparison Operators"></p>
+<p><strong>Example: Comparison Operators</strong></p>
+<pre><code class="language-py">x, y = <span class="hljs-number">5</span>, <span class="hljs-number">10</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;x &gt; y:&#x27;</span>, x &gt; y)   <span class="hljs-comment"># False</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;x &lt; y:&#x27;</span>, x &lt; y)   <span class="hljs-comment"># True</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;x == y:&#x27;</span>, x == y) <span class="hljs-comment"># False</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;x != y:&#x27;</span>, x != y) <span class="hljs-comment"># True</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;x &gt;= 5:&#x27;</span>, x &gt;= <span class="hljs-number">5</span>) <span class="hljs-comment"># True</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;y &lt;= 10:&#x27;</span>, y &lt;= <span class="hljs-number">10</span>) <span class="hljs-comment"># True</span>
+
+<span class="hljs-comment"># String comparisons</span>
+str1, str2 = <span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;world&quot;</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;str1 == str2:&#x27;</span>, str1 == str2) <span class="hljs-comment"># False</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;str1 &lt; str2:&#x27;</span>, str1 &lt; str2)   <span class="hljs-comment"># True (lexicographical comparison)</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;len(str1) &gt; len(str2):&#x27;</span>, <span class="hljs-built_in">len</span>(str1) &gt; <span class="hljs-built_in">len</span>(str2)) <span class="hljs-comment"># False</span>
+
+<span class="hljs-comment"># Object identity</span>
+list1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+list2 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+list3 = list1
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;list1 is list2:&#x27;</span>, list1 <span class="hljs-keyword">is</span> list2) <span class="hljs-comment"># False</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;list1 is list3:&#x27;</span>, list1 <span class="hljs-keyword">is</span> list3) <span class="hljs-comment"># True</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;list1 == list2:&#x27;</span>, list1 == list2) <span class="hljs-comment"># True</span>
+</code></pre>
+<h3 id="logical-operators">Logical Operators</h3>
+<p>Python uses the keywords <em>and</em>, <em>or</em>, and <em>not</em> for logical operations. These are used to combine conditional statements:</p>
+<p><img src="./images/logical_operators.png" alt="Logical Operators"></p>
+<p><strong>Example: Logical Operators</strong></p>
+<pre><code class="language-py">x = <span class="hljs-number">5</span>
+y = <span class="hljs-number">10</span>
+z = <span class="hljs-number">15</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;x &lt; y and y &lt; z:&#x27;</span>, x &lt; y <span class="hljs-keyword">and</span> y &lt; z)  <span class="hljs-comment"># True</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;x &lt; y or y &gt; z:&#x27;</span>, x &lt; y <span class="hljs-keyword">or</span> y &gt; z)    <span class="hljs-comment"># True</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;not (x &lt; y):&#x27;</span>, <span class="hljs-keyword">not</span> (x &lt; y))          <span class="hljs-comment"># False</span>
+
+<span class="hljs-comment"># Short-circuit evaluation</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;False and (1/0):&#x27;</span>, <span class="hljs-literal">False</span> <span class="hljs-keyword">and</span> (<span class="hljs-number">1</span>/<span class="hljs-number">0</span>))  <span class="hljs-comment"># False (second part not evaluated)</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;True or (1/0):&#x27;</span>, <span class="hljs-literal">True</span> <span class="hljs-keyword">or</span> (<span class="hljs-number">1</span>/<span class="hljs-number">0</span>))      <span class="hljs-comment"># True (second part not evaluated)</span>
+
+<span class="hljs-comment"># Combining multiple conditions</span>
+condition = (x &lt; y) <span class="hljs-keyword">and</span> (y &lt; z) <span class="hljs-keyword">or</span> (z &gt; <span class="hljs-number">20</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Complex condition:&#x27;</span>, condition)  <span class="hljs-comment"># True</span>
+
+<span class="hljs-comment"># Using parentheses for clarity</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Parentheses change order:&#x27;</span>, (x &lt; y <span class="hljs-keyword">or</span> y &gt; z) <span class="hljs-keyword">and</span> z &gt; x)  <span class="hljs-comment"># True</span>
+</code></pre>
+
+        </main>
+    </div>
+    
+<footer>
+    <p>&copy; 2024 My Blog. All rights reserved.</p>
+</footer>
+  
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+    </script>
+</body>
+</html>
+    
