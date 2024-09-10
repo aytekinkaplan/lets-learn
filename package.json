@@ -6,7 +6,9 @@
   "type": "commonjs",
   "scripts": {
     "start": "node server.js",
-    "build": "node index.js"
+    "build": "node index.js",
+    "generate": "node index.js generate",
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "express": "^4.19.2",
