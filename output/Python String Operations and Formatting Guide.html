@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python String Operations and Formatting Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+</head>
+<body>
+    
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+  
+    <div class="container">
+        <main>
+            <h1>Python String Operations and Formatting Guide</h1>
+            <p>Here&#39;s a revised version of the content with modified sentences, increased code examples, and maintained structure:</p>
+<h2 id="strings">Strings</h2>
+<p>Text is a string data type. Any data type expressed as text is considered a string. Data enclosed in single, double, or triple quotes are strings. Various string methods and built-in functions are available to manipulate string data types. To determine the length of a string, utilize the len() function.</p>
+<h3 id="creating-a-string">Creating a String</h3>
+<pre><code class="language-py">letter = <span class="hljs-string">&#x27;A&#x27;</span>                <span class="hljs-comment"># A string can be a single character or multiple texts</span>
+<span class="hljs-built_in">print</span>(letter)               <span class="hljs-comment"># A</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(letter))          <span class="hljs-comment"># 1</span>
+greeting = <span class="hljs-string">&#x27;Greetings, Universe!&#x27;</span>  <span class="hljs-comment"># Strings can be created using single or double quotes,&quot;Greetings, Universe!&quot;</span>
+<span class="hljs-built_in">print</span>(greeting)             <span class="hljs-comment"># Greetings, Universe!</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(greeting))        <span class="hljs-comment"># 21</span>
+sentence = <span class="hljs-string">&quot;I trust you&#x27;re enjoying the Python Challenge&quot;</span>
+<span class="hljs-built_in">print</span>(sentence)
+
+<span class="hljs-comment"># Additional examples</span>
+word = <span class="hljs-string">&quot;Python&quot;</span>
+<span class="hljs-built_in">print</span>(word)                 <span class="hljs-comment"># Python</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(word))            <span class="hljs-comment"># 6</span>
+
+phrase = <span class="hljs-string">&#x27;Coding is fun!&#x27;</span>
+<span class="hljs-built_in">print</span>(phrase)               <span class="hljs-comment"># Coding is fun!</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(phrase))          <span class="hljs-comment"># 15</span>
+</code></pre>
+<p>Multiline strings are created using triple single (&#39;&#39;&#39;) or triple double quotes (&quot;&quot;&quot;). Observe the example below.</p>
+<pre><code class="language-py">multiline_string = <span class="hljs-string">&#x27;&#x27;&#x27;I am a programmer and find joy in coding.
+I haven&#x27;t discovered anything as fulfilling as empowering individuals through technology.
+That&#x27;s the reason I initiated the 30 days of python challenge.&#x27;&#x27;&#x27;</span>
+<span class="hljs-built_in">print</span>(multiline_string)
+
+<span class="hljs-comment"># An alternative method to achieve the same result</span>
+multiline_string = <span class="hljs-string">&quot;&quot;&quot;I am a programmer and find joy in coding.
+I haven&#x27;t discovered anything as fulfilling as empowering individuals through technology.
+That&#x27;s the reason I initiated the 30 days of python challenge.&quot;&quot;&quot;</span>
+<span class="hljs-built_in">print</span>(multiline_string)
+
+<span class="hljs-comment"># Additional multiline string example</span>
+poem = <span class="hljs-string">&#x27;&#x27;&#x27;Roses are red,
+Violets are blue,
+Python is awesome,
+And so are you!&#x27;&#x27;&#x27;</span>
+<span class="hljs-built_in">print</span>(poem)
+</code></pre>
+<h3 id="string-concatenation">String Concatenation</h3>
+<p>We have the ability to join strings together. The process of merging or connecting strings is known as concatenation. Examine the example below:</p>
+<pre><code class="language-py">first_name = <span class="hljs-string">&#x27;John&#x27;</span>
+last_name = <span class="hljs-string">&#x27;Doe&#x27;</span>
+space = <span class="hljs-string">&#x27; &#x27;</span>
+full_name = first_name  +  space + last_name
+<span class="hljs-built_in">print</span>(full_name) <span class="hljs-comment"># John Doe</span>
+<span class="hljs-comment"># Verifying the length of a string using the len() built-in function</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(first_name))  <span class="hljs-comment"># 4</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(last_name))   <span class="hljs-comment"># 3</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(first_name) &gt; <span class="hljs-built_in">len</span>(last_name)) <span class="hljs-comment"># True</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(full_name)) <span class="hljs-comment"># 8</span>
+
+<span class="hljs-comment"># Additional concatenation examples</span>
+greeting = <span class="hljs-string">&quot;Hello&quot;</span>
+name = <span class="hljs-string">&quot;Alice&quot;</span>
+message = greeting + <span class="hljs-string">&quot;, &quot;</span> + name + <span class="hljs-string">&quot;!&quot;</span>
+<span class="hljs-built_in">print</span>(message)  <span class="hljs-comment"># Hello, Alice!</span>
+
+word1 = <span class="hljs-string">&quot;Python&quot;</span>
+word2 = <span class="hljs-string">&quot;Programming&quot;</span>
+combined = word1 + <span class="hljs-string">&quot; &quot;</span> + word2
+<span class="hljs-built_in">print</span>(combined)  <span class="hljs-comment"># Python Programming</span>
+</code></pre>
+<h3 id="escape-sequences-in-strings">Escape Sequences in Strings</h3>
+<p>In Python and other programming languages, a backslash () followed by a character forms an escape sequence. Let&#39;s examine the most common escape characters:</p>
+<ul>
+<li>\n: new line</li>
+<li>\t: Tab (equivalent to 8 spaces)</li>
+<li>\\: Back slash</li>
+<li>\&#39;: Single quote (&#39;)</li>
+<li>\&quot;: Double quote (&quot;)</li>
+</ul>
+<p>Now, let&#39;s observe the usage of these escape sequences with examples.</p>
+<pre><code class="language-py"><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;I hope everyone is relishing the Python Challenge.\nAren&#x27;</span>t you?<span class="hljs-string">&#x27;) # line break
+print(&#x27;</span>Days\tSubjects\tExercises<span class="hljs-string">&#x27;) # adding tab space or 4 spaces
+print(&#x27;</span>Day <span class="hljs-number">1</span>\t5\t5<span class="hljs-string">&#x27;)
+print(&#x27;</span>Day <span class="hljs-number">2</span>\t6\t20<span class="hljs-string">&#x27;)
+print(&#x27;</span>Day <span class="hljs-number">3</span>\t5\t23<span class="hljs-string">&#x27;)
+print(&#x27;</span>Day <span class="hljs-number">4</span>\t1\t35<span class="hljs-string">&#x27;)
+print(&#x27;</span>This <span class="hljs-keyword">is</span> a backslash symbol (\\)<span class="hljs-string">&#x27;) # To write a backslash
+print(&#x27;</span>In numerous programming languages, it commences <span class="hljs-keyword">with</span> \<span class="hljs-string">&quot;Hello, World!\&quot;&#x27;) # to write a double quote inside a single quote
+
+# Additional examples
+print(&quot;</span>She said, \<span class="hljs-string">&quot;Python is amazing!\&quot;&quot;</span>)  <span class="hljs-comment"># She said, &quot;Python is amazing!&quot;</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;It\&#x27;s a beautiful day!&#x27;</span>)  <span class="hljs-comment"># It&#x27;s a beautiful day!</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;First line\nSecond line\nThird line&quot;</span>)  <span class="hljs-comment"># Prints on three separate lines</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Column1\tColumn2\tColumn3&quot;</span>)  <span class="hljs-comment"># Prints with tab spacing</span>
+
+<span class="hljs-comment"># output</span>
+I hope everyone <span class="hljs-keyword">is</span> relishing the Python Challenge.
+Aren<span class="hljs-string">&#x27;t you?
+Days	Subjects	Exercises
+Day 1	5	    5
+Day 2	6	    20
+Day 3	5	    23
+Day 4	1	    35
+This is a backslash symbol (\)
+In numerous programming languages, it commences with &quot;Hello, World!&quot;</span>
+</code></pre>
+<h3 id="string-formatting">String formatting</h3>
+<h4 id="old-style-string-formatting--operator">Old Style String Formatting (% Operator)</h4>
+<p>Python offers multiple methods for formatting strings. In this section, we&#39;ll explore some of them.
+The &quot;%&quot; operator is employed to format a set of variables enclosed in a &quot;tuple&quot; (a fixed size list), along with a format string containing normal text and &quot;argument specifiers&quot;, special symbols such as &quot;%s&quot;, &quot;%d&quot;, &quot;%f&quot;, &quot;%.<small>number of digits</small>f&quot;.</p>
+<ul>
+<li>%s - String (or any object with a string representation, like numbers)</li>
+<li>%d - Integers</li>
+<li>%f - Floating point numbers</li>
+<li>&quot;%.<small>number of digits</small>f&quot; - Floating point numbers with fixed precision</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-comment"># Strings only</span>
+first_name = <span class="hljs-string">&#x27;John&#x27;</span>
+last_name = <span class="hljs-string">&#x27;Doe&#x27;</span>
+language = <span class="hljs-string">&#x27;Python&#x27;</span>
+formated_string = <span class="hljs-string">&#x27;I am %s %s. I instruct %s&#x27;</span> %(first_name, last_name, language)
+<span class="hljs-built_in">print</span>(formated_string)
+
+<span class="hljs-comment"># Strings and numbers</span>
+radius = <span class="hljs-number">10</span>
+pi = <span class="hljs-number">3.14</span>
+area = pi * radius ** <span class="hljs-number">2</span>
+formated_string = <span class="hljs-string">&#x27;The area of a circle with radius %d is %.2f.&#x27;</span> %(radius, area) <span class="hljs-comment"># 2 refers to the 2 significant digits after the decimal point</span>
+
+python_libraries = [<span class="hljs-string">&#x27;Django&#x27;</span>, <span class="hljs-string">&#x27;Flask&#x27;</span>, <span class="hljs-string">&#x27;NumPy&#x27;</span>, <span class="hljs-string">&#x27;Matplotlib&#x27;</span>,<span class="hljs-string">&#x27;Pandas&#x27;</span>]
+formated_string = <span class="hljs-string">&#x27;The following are Python libraries:%s&#x27;</span> % (python_libraries)
+<span class="hljs-built_in">print</span>(formated_string) <span class="hljs-comment"># &quot;The following are Python libraries:[&#x27;Django&#x27;, &#x27;Flask&#x27;, &#x27;NumPy&#x27;, &#x27;Matplotlib&#x27;,&#x27;Pandas&#x27;]&quot;</span>
+
+<span class="hljs-comment"># Additional examples</span>
+age = <span class="hljs-number">30</span>
+height = <span class="hljs-number">1.75</span>
+formated_string = <span class="hljs-string">&#x27;I am %d years old and %.2f meters tall.&#x27;</span> % (age, height)
+<span class="hljs-built_in">print</span>(formated_string)  <span class="hljs-comment"># I am 30 years old and 1.75 meters tall.</span>
+
+quantity = <span class="hljs-number">3</span>
+item = <span class="hljs-string">&#x27;apples&#x27;</span>
+price = <span class="hljs-number">0.99</span>
+formated_string = <span class="hljs-string">&#x27;I bought %d %s for $%.2f each.&#x27;</span> % (quantity, item, price)
+<span class="hljs-built_in">print</span>(formated_string)  <span class="hljs-comment"># I bought 3 apples for $0.99 each.</span>
+</code></pre>
+<h4 id="new-style-string-formatting-strformat">New Style String Formatting (str.format)</h4>
+<p>This formatting method was introduced in Python version 3.</p>
+<pre><code class="language-py">first_name = <span class="hljs-string">&#x27;John&#x27;</span>
+last_name = <span class="hljs-string">&#x27;Doe&#x27;</span>
+language = <span class="hljs-string">&#x27;Python&#x27;</span>
+formated_string = <span class="hljs-string">&#x27;I am {} {}. I instruct {}&#x27;</span>.<span class="hljs-built_in">format</span>(first_name, last_name, language)
+<span class="hljs-built_in">print</span>(formated_string)
+a = <span class="hljs-number">4</span>
+b = <span class="hljs-number">3</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;{} + {} = {}&#x27;</span>.<span class="hljs-built_in">format</span>(a, b, a + b))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;{} - {} = {}&#x27;</span>.<span class="hljs-built_in">format</span>(a, b, a - b))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;{} * {} = {}&#x27;</span>.<span class="hljs-built_in">format</span>(a, b, a * b))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;{} / {} = {:.2f}&#x27;</span>.<span class="hljs-built_in">format</span>(a, b, a / b)) <span class="hljs-comment"># limits it to two digits after decimal</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;{} % {} = {}&#x27;</span>.<span class="hljs-built_in">format</span>(a, b, a % b))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;{} // {} = {}&#x27;</span>.<span class="hljs-built_in">format</span>(a, b, a // b))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;{} ** {} = {}&#x27;</span>.<span class="hljs-built_in">format</span>(a, b, a ** b))
+
+<span class="hljs-comment"># Additional examples</span>
+name = <span class="hljs-string">&quot;Alice&quot;</span>
+age = <span class="hljs-number">30</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;My name is {name} and I&#x27;m {age} years old.&quot;</span>.<span class="hljs-built_in">format</span>(name=name, age=age))
+
+x = <span class="hljs-number">10</span>
+y = <span class="hljs-number">20</span>
+z = <span class="hljs-number">30</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;x = {0}, y = {1}, z = {2}&quot;</span>.<span class="hljs-built_in">format</span>(x, y, z))
+
+<span class="hljs-comment"># output</span>
+<span class="hljs-number">4</span> + <span class="hljs-number">3</span> = <span class="hljs-number">7</span>
+<span class="hljs-number">4</span> - <span class="hljs-number">3</span> = <span class="hljs-number">1</span>
+<span class="hljs-number">4</span> * <span class="hljs-number">3</span> = <span class="hljs-number">12</span>
+<span class="hljs-number">4</span> / <span class="hljs-number">3</span> = <span class="hljs-number">1.33</span>
+<span class="hljs-number">4</span> % <span class="hljs-number">3</span> = <span class="hljs-number">1</span>
+<span class="hljs-number">4</span> // <span class="hljs-number">3</span> = <span class="hljs-number">1</span>
+<span class="hljs-number">4</span> ** <span class="hljs-number">3</span> = <span class="hljs-number">64</span>
+
+<span class="hljs-comment"># Strings  and numbers</span>
+radius = <span class="hljs-number">10</span>
+pi = <span class="hljs-number">3.14</span>
+area = pi * radius ** <span class="hljs-number">2</span>
+formated_string = <span class="hljs-string">&#x27;The area of a circle with radius {} is {:.2f}.&#x27;</span>.<span class="hljs-built_in">format</span>(radius, area) <span class="hljs-comment"># 2 digits after decimal</span>
+<span class="hljs-built_in">print</span>(formated_string)
+
+<span class="hljs-comment"># More examples</span>
+price = <span class="hljs-number">49.95</span>
+qty = <span class="hljs-number">30</span>
+formated_string = <span class="hljs-string">&#x27;I bought {qty} items at ${price:.2f} each.&#x27;</span>.<span class="hljs-built_in">format</span>(qty=qty, price=price)
+<span class="hljs-built_in">print</span>(formated_string)
+</code></pre>
+<h4 id="string-interpolation--f-strings-python-36">String Interpolation / f-Strings (Python 3.6+)</h4>
+<p>Another modern string formatting method is string interpolation, also known as f-strings. Strings begin with f and we can inject data into their corresponding positions.</p>
+<pre><code class="language-py">a = <span class="hljs-number">4</span>
+b = <span class="hljs-number">3</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">{a}</span> + <span class="hljs-subst">{b}</span> = <span class="hljs-subst">{a +b}</span>&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">{a}</span> - <span class="hljs-subst">{b}</span> = <span class="hljs-subst">{a - b}</span>&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">{a}</span> * <span class="hljs-subst">{b}</span> = <span class="hljs-subst">{a * b}</span>&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">{a}</span> / <span class="hljs-subst">{b}</span> = <span class="hljs-subst">{a / b:<span class="hljs-number">.2</span>f}</span>&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">{a}</span> % <span class="hljs-subst">{b}</span> = <span class="hljs-subst">{a % b}</span>&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">{a}</span> // <span class="hljs-subst">{b}</span> = <span class="hljs-subst">{a // b}</span>&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">{a}</span> ** <span class="hljs-subst">{b}</span> = <span class="hljs-subst">{a ** b}</span>&#x27;</span>)
+
+<span class="hljs-comment"># Additional examples</span>
+name = <span class="hljs-string">&quot;Bob&quot;</span>
+age = <span class="hljs-number">35</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;My name is <span class="hljs-subst">{name}</span> and I&#x27;m <span class="hljs-subst">{age}</span> years old.&quot;</span>)
+
+x = <span class="hljs-number">10</span>
+y = <span class="hljs-number">20</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;The sum of <span class="hljs-subst">{x}</span> and <span class="hljs-subst">{y}</span> is <span class="hljs-subst">{x + y}</span>&quot;</span>)
+
+price = <span class="hljs-number">49.95</span>
+qty = <span class="hljs-number">30</span>
+total = price * qty
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Total cost: $<span class="hljs-subst">{total:<span class="hljs-number">.2</span>f}</span>&quot;</span>)
+</code></pre>
+<h3 id="python-strings-as-sequences-of-characters">Python Strings as Sequences of Characters</h3>
+<p>Python strings are sequences of characters and share their basic methods of access with other Python ordered sequences of objects – lists and tuples. The simplest way of extracting individual characters from strings (and individual members from any sequence) is to unpack them into corresponding variables.</p>
+<h4 id="unpacking-characters">Unpacking Characters</h4>
+<pre><code>language = <span class="hljs-string">&#x27;Python&#x27;</span>
+<span class="hljs-keyword">a</span>,b,c,d,e,f = language <span class="hljs-comment"># unpacking sequence characters into variables</span>
+print(<span class="hljs-keyword">a</span>) <span class="hljs-comment"># P</span>
+print(b) <span class="hljs-comment"># y</span>
+print(c) <span class="hljs-comment"># t</span>
+print(d) <span class="hljs-comment"># h</span>
+print(e) <span class="hljs-comment"># o</span>
+print(f) <span class="hljs-comment"># n</span>
+
+<span class="hljs-comment"># Additional example</span>
+<span class="hljs-built_in">word</span> = <span class="hljs-string">&#x27;Hello&#x27;</span>
+<span class="hljs-keyword">first</span>, <span class="hljs-keyword">second</span>, <span class="hljs-keyword">third</span>, <span class="hljs-keyword">fourth</span>, <span class="hljs-keyword">fifth</span> = <span class="hljs-built_in">word</span>
+print(<span class="hljs-keyword">first</span>)   <span class="hljs-comment"># H</span>
+print(<span class="hljs-keyword">third</span>)   <span class="hljs-comment"># l</span>
+print(<span class="hljs-keyword">fifth</span>)   <span class="hljs-comment"># o</span>
+</code></pre>
+<h4 id="accessing-characters-in-strings-by-index">Accessing Characters in Strings by Index</h4>
+<p>In programming, counting typically begins from zero. Thus, the first letter of a string is at index zero, and the last letter of a string is at the length of the string minus one.</p>
+<p><img src="./images/string_index.png" alt="String index"></p>
+<pre><code class="language-py">language = <span class="hljs-string">&#x27;Python&#x27;</span>
+first_letter = language[<span class="hljs-number">0</span>]
+<span class="hljs-built_in">print</span>(first_letter) <span class="hljs-comment"># P</span>
+second_letter = language[<span class="hljs-number">1</span>]
+<span class="hljs-built_in">print</span>(second_letter) <span class="hljs-comment"># y</span>
+last_index = <span class="hljs-built_in">len</span>(language) - <span class="hljs-number">1</span>
+last_letter = language[last_index]
+<span class="hljs-built_in">print</span>(last_letter) <span class="hljs-comment"># n</span>
+
+<span class="hljs-comment"># Additional examples</span>
+word = <span class="hljs-string">&quot;Hello&quot;</span>
+<span class="hljs-built_in">print</span>(word[<span class="hljs-number">0</span>])  <span class="hljs-comment"># H</span>
+<span class="hljs-built_in">print</span>(word[<span class="hljs-number">4</span>])  <span class="hljs-comment"># o</span>
+<span class="hljs-built_in">print</span>(word[-<span class="hljs-number">1</span>])  <span class="hljs-comment"># o (last character)</span>
+<span class="hljs-built_in">print</span>(word[-<span class="hljs-number">2</span>])  <span class="hljs-comment"># l (second to last character)</span>
+</code></pre>
+<p>If we wish to start from the right end, we can use negative indexing. -1 represents the last index.</p>
+<pre><code class="language-py">language = <span class="hljs-string">&#x27;Python&#x27;</span>
+last_letter = language[-<span class="hljs-number">1</span>]
+<span class="hljs-built_in">print</span>(last_letter) <span class="hljs-comment"># n</span>
+second_last = language[-<span class="hljs-number">2</span>]
+<span class="hljs-built_in">print</span>(second_last) <span class="hljs-comment"># o</span>
+
+<span class="hljs-comment"># Additional examples</span>
+word = <span class="hljs-string">&quot;World&quot;</span>
+<span class="hljs-built_in">print</span>(word[-<span class="hljs-number">1</span>])  <span class="hljs-comment"># d</span>
+<span class="hljs-built_in">print</span>(word[-<span class="hljs-number">3</span>])  <span class="hljs-comment"># r</span>
+<span class="hljs-built_in">print</span>(word[-<span class="hljs-number">5</span>])  <span class="hljs-comment"># W</span>
+</code></pre>
+<h4 id="slicing-python-strings">Slicing Python Strings</h4>
+<p>In Python, we can slice strings into substrings.</p>
+<pre><code class="language-py">language = <span class="hljs-string">&#x27;Python&#x27;</span>
+first_three = language[<span class="hljs-number">0</span>:<span class="hljs-number">3</span>] <span class="hljs-comment"># starts at zero index and up to 3 but not including 3</span>
+<span class="hljs-built_in">print</span>(first_three) <span class="hljs-comment">#Pyt</span>
+last_three = language[<span class="hljs-number">3</span>:<span class="hljs-number">6</span>]
+<span class="hljs-built_in">print</span>(last_three) <span class="hljs-comment"># hon</span>
+<span class="hljs-comment"># Another way</span>
+last_three = language[-<span class="hljs-number">3</span>:]
+<span class="hljs-built_in">print</span>(last_three)   <span class="hljs-comment"># hon</span>
+last_three = language[<span class="hljs-number">3</span>:]
+<span class="hljs-built_in">print</span>(last_three)   <span class="hljs-comment"># hon</span>
+
+<span class="hljs-comment"># Additional examples</span>
+word = <span class="hljs-string">&quot;Programming&quot;</span>
+<span class="hljs-built_in">print</span>(word[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>])    <span class="hljs-comment"># Prog</span>
+<span class="hljs-built_in">print</span>(word[<span class="hljs-number">4</span>:])     <span class="hljs-comment"># ramming</span>
+<span class="hljs-built_in">print</span>(word[:<span class="hljs-number">5</span>])     <span class="hljs-comment"># Progr</span>
+<span class="hljs-built_in">print</span>(word[-<span class="hljs-number">5</span>:])    <span class="hljs-comment"># ming</span>
+<span class="hljs-built_in">print</span>(word[::<span class="hljs-number">2</span>])    <span class="hljs-comment"># Pormmn (every second character)</span>
+</code></pre>
+<h4 id="reversing-a-string">Reversing a String</h4>
+<p>We can effortlessly reverse strings in Python.</p>
+<pre><code class="language-py">greeting = <span class="hljs-string">&#x27;Hello, World!&#x27;</span>
+<span class="hljs-built_in">print</span>(greeting[::-<span class="hljs-number">1</span>]) <span class="hljs-comment"># !dlroW ,olleH</span>
+
+<span class="hljs-comment"># Additional examples</span>
+name = <span class="hljs-string">&quot;Alice&quot;</span>
+<span class="hljs-built_in">print</span>(name[::-<span class="hljs-number">1</span>])  <span class="hljs-comment"># ecilA</span>
+
+sentence = <span class="hljs-string">&quot;Python is awesome&quot;</span>
+<span class="hljs-built_in">print</span>(sentence[::-<span class="hljs-number">1</span>])  <span class="hljs-comment"># emosewa si nohtyP</span>
+</code></pre>
+<h4 id="skipping-characters-while-slicing">Skipping Characters While Slicing</h4>
+<p>It&#39;s possible to skip characters while slicing by passing a step argument to the slice method.</p>
+<pre><code class="language-py">language = <span class="hljs-string">&#x27;Python&#x27;</span>
+pto = language[<span class="hljs-number">0</span>:<span class="hljs-number">6</span>:<span class="hljs-number">2</span>] <span class="hljs-comment">#</span>
+<span class="hljs-built_in">print</span>(pto) <span class="hljs-comment"># Pto</span>
+
+<span class="hljs-comment"># Additional examples</span>
+word = <span class="hljs-string">&quot;Programming&quot;</span>
+<span class="hljs-built_in">print</span>(word[::<span class="hljs-number">2</span>])  <span class="hljs-comment"># Pormmn</span>
+<span class="hljs-built_in">print</span>(word[<span class="hljs-number">1</span>::<span class="hljs-number">2</span>])  <span class="hljs-comment"># rgamn</span>
+<span class="hljs-built_in">print</span>(word[::-<span class="hljs-number">2</span>])  <span class="hljs-comment"># gnmrr</span>
+</code></pre>
+<h3 id="string-methods">String Methods</h3>
+<p>There are numerous string methods that allow us to format strings. Let&#39;s examine some of these string methods in the following examples:</p>
+<ul>
+<li>capitalize(): Converts the first character of the string to a capital letter</li>
+</ul>
+<pre><code class="language-py">challenge = <span class="hljs-string">&#x27;master python in 30 days&#x27;</span>
+<span class="hljs-built_in">print</span>(challenge.capitalize()) <span class="hljs-comment"># &#x27;Master python in 30 days&#x27;</span>
+
+<span class="hljs-comment"># Additional example</span>
+name = <span class="hljs-string">&#x27;john doe&#x27;</span>
+<span class="hljs-built_in">print</span>(name.capitalize())  <span class="hljs-comment"># &#x27;John doe&#x27;</span>
+</code></pre>
+<ul>
+<li>count(): returns occurrences of substring in string, count(substring, start=.., end=..). The start is a starting index for counting and end is the last index to count.</li>
+</ul>
+<pre><code class="language-py">challenge = <span class="hljs-string">&#x27;Master python in 30 days&#x27;</span>
+<span class="hljs-built_in">print</span>(challenge.count(<span class="hljs-string">&#x27;y&#x27;</span>))  <span class="hljs-comment"># 2</span>
+<span class="hljs-built_in">print</span>(challenge.count(<span class="hljs-string">&#x27;y&#x27;</span>, <span class="hljs-number">7</span>, <span class="hljs-number">14</span>))  <span class="hljs-comment"># 1</span>
+<span class="hljs-built_in">print</span>(challenge.count(<span class="hljs-string">&#x27;th&#x27;</span>))  <span class="hljs-comment"># 0</span>
+
+
+<span class="hljs-comment"># Additional examples</span>
+sentence = <span class="hljs-string">&#x27;She sells seashells by the seashore&#x27;</span>
+<span class="hljs-built_in">print</span>(sentence.count(<span class="hljs-string">&#x27;s&#x27;</span>))  <span class="hljs-comment"># 8</span>
+<span class="hljs-built_in">print</span>(sentence.count(<span class="hljs-string">&#x27;sea&#x27;</span>))  <span class="hljs-comment"># 2</span>
+<span class="hljs-built_in">print</span>(sentence.count(<span class="hljs-string">&#x27;s&#x27;</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>))  <span class="hljs-comment"># 3</span>
+</code></pre>
+<ul>
+<li>endswith(): Checks if a string ends with a specified ending</li>
+</ul>
+<pre><code class="language-py">challenge = <span class="hljs-string">&#x27;Master python in 30 days&#x27;</span>
+<span class="hljs-built_in">print</span>(challenge.endswith(<span class="hljs-string">&#x27;ys&#x27;</span>))   <span class="hljs-comment"># True</span>
+<span class="hljs-built_in">print</span>(challenge.endswith(<span class="hljs-string">&#x27;tion&#x27;</span>)) <span class="hljs-comment"># False</span>
+
+
+<span class="hljs-comment"># Additional examples</span>
+filename = <span class="hljs-string">&#x27;document.pdf&#x27;</span>
+<span class="hljs-built_in">print</span>(filename.endswith(<span class="hljs-string">&#x27;.pdf&#x27;</span>))  <span class="hljs-comment"># True</span>
+<span class="hljs-built_in">print</span>(filename.endswith(<span class="hljs-string">&#x27;.txt&#x27;</span>))  <span class="hljs-comment"># False</span>
+</code></pre>
+<ul>
+<li>expandtabs(): Replaces tab character with spaces, default tab size is 8. It takes tab size argument</li>
+</ul>
+<pre><code class="language-py">challenge = <span class="hljs-string">&#x27;thirty\tdays\tof\tpython&#x27;</span>
+<span class="hljs-built_in">print</span>(challenge.expandtabs())   <span class="hljs-comment"># &#x27;thirty  days    of      python&#x27;</span>
+<span class="hljs-built_in">print</span>(challenge.expandtabs(<span class="hljs-number">10</span>)) <span class="hljs-comment"># &#x27;thirty    days      of        python&#x27;</span>
+
+<span class="hljs-comment"># Additional examples</span>
+text = <span class="hljs-string">&#x27;Name\tAge\tCountry&#x27;</span>
+<span class="hljs-built_in">print</span>(text.expandtabs(<span class="hljs-number">15</span>))  <span class="hljs-comment"># &#x27;Name           Age            Country&#x27;</span>
+</code></pre>
+<ul>
+<li>find(): Returns the index of the first occurrence of a substring, if not found returns -1</li>
+</ul>
+<pre><code class="language-py">challenge = <span class="hljs-string">&#x27;thirty days of python&#x27;</span>
+<span class="hljs-built_in">print</span>(challenge.find(<span class="hljs-string">&#x27;y&#x27;</span>))  <span class="hljs-comment"># 5</span>
+<span class="hljs-built_in">print</span>(challenge.find(<span class="hljs-string">&#x27;th&#x27;</span>)) <span class="hljs-comment"># 0</span>
+
+<span class="hljs-comment"># Additional examples</span>
+sentence = <span class="hljs-string">&#x27;Python is a versatile programming language&#x27;</span>
+<span class="hljs-built_in">print</span>(sentence.find(<span class="hljs-string">&#x27;programming&#x27;</span>))  <span class="hljs-comment"># 22</span>
+<span class="hljs-built_in">print</span>(sentence.find(<span class="hljs-string">&#x27;Java&#x27;</span>))  <span class="hljs-comment"># -1</span>
+</code></pre>
+<ul>
+<li>rfind(): Returns the index of the last occurrence of a substring, if not found returns -1</li>
+</ul>
+<pre><code class="language-py">challenge = <span class="hljs-string">&#x27;thirty days of python</span>
+</code></pre>
+
+        </main>
+    </div>
+    
+<footer>
+    <p>&copy; 2024 My Blog. All rights reserved.</p>
+</footer>
+  
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+    </script>
+</body>
+</html>
+    
